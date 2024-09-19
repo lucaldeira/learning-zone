@@ -1,0 +1,4 @@
+/kafka/build/*
+/kafka/.gradle/*
+/.idea/*
+/kafka.iml
