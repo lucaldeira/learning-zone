@@ -1,0 +1,33 @@
+logging:
+  level:
+    com.zaxxer.hikari: DEBUG  # Set HikariCP logging to DEBUG
+    org.springframework.jdbc.datasource: DEBUG  # Optional: More detailed JDBC logging
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/your_database  # Replace with your DB name
+    username: your_username  # Replace with your DB user
+    password: your_password  # Replace with your DB password
+    driver-class-name: org.postgresql.Driver  # Optional: explicitly define the driver class
+
+  jdbc:
+    repositories:
+      enabled: true  # Enable JDBC repositories
+
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: example_group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer'
+
+networks:
+  default:
+    driver: bridge
